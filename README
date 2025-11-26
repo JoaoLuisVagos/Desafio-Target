@@ -1,0 +1,77 @@
+# Desafio - Target (repositório)
+
+Bem-vindo ao repositório do desafio. Este workspace contém três projetos PHP simples que expõem APIs via arquivos `api.php` e usam arquivos JSON de exemplo como fixtures.
+
+## Estrutura do repositório
+
+- projeto_1/
+  - `api.php`  — endpoint(s) que usam o arquivo `vendas.json` como base de dados de exemplo
+  - `vendas.json` — amostra de dados de vendas
+
+- projeto_2/
+  - `api.php` — endpoint(s) que usam `estoque.json` e `movimentacoes.json`
+  - `estoque.json` — amostra de estoque
+  - `movimentacoes.json` — amostra de movimentações (entradas/saídas)
+
+- projeto_3/
+  - `api.php` — endpoint(s) stand-alone (sem JSON associado no repositório)
+
+
+## Como executar localmente
+
+Estes projetos são aplicações PHP simples (um único arquivo `api.php` por projeto). Você pode rodá-los com o servidor embutido do PHP. Exemplo a partir da raiz do repositório:
+
+```bash
+# Projeto 1 (porta 8001)
+php -S localhost:8001 -t projeto_1
+
+# Projeto 2 (porta 8002)
+php -S localhost:8002 -t projeto_2
+
+# Projeto 3 (porta 8003)
+php -S localhost:8003 -t projeto_3
+```
+
+Depois de iniciar um servidor, acesse os endpoints usando o Postman ou `curl`. Os `api.php` típicos aceitam requisições GET/POST (ver comentários no arquivo `api.php` de cada projeto para comportamento específico).
+
+
+## Exemplos de requisições
+
+Exemplo genérico (GET):
+
+```bash
+curl http://localhost:8001/api.php
+```
+
+Exemplo genérico (POST json) — adapte rota/params com base no `api.php` do projeto:
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"chave": "valor"}' \
+  http://localhost:8002/api.php
+```
+
+
+## O que cada projeto contém (resumo)
+
+- projeto_1 — provavelmente lida com vendas. O `vendas.json` contém exemplos do histórico de vendas e pode ser usado diretamente pelo `api.php` para retornar dados filtrados ou estatísticas.
+
+- projeto_2 — contém fixtures `estoque.json` e `movimentacoes.json`: espere endpoints relacionados a inventário (níveis de estoque) e movimentações (entradas, saídas). Ideal para testar consultas relacionadas a produtos e histórico de movimentações.
+
+- projeto_3 — apenas `api.php`. Pode ser um exercício ou endpoint mais simples. Verifique o arquivo para exemplos e rotas suportadas.
+
+
+## Dicas & próximos passos
+
+- Abra os arquivos `projeto_*/api.php` para ver comentários, rotas e comportamentos suportados (alguns `api.php` podem realizar leitura direta dos JSONs inclusos).
+- Se quiser, podemos:
+  - adicionar exemplos de payloads reais retirados dos JSONs (posso extrair e mostrar aqui)
+  - criar testes automatizados ou exemplos de integração
+  - empacotar cada projeto com um Dockerfile para execução direta
+
+
+## Contato
+
+email: joaoluisvagos@gmail.com
+Linkedin: https://www.linkedin.com/in/joao-luis-de-almeida-vagos-531a61244/
