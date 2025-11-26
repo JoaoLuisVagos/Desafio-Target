@@ -1,0 +1,16 @@
+[
+    {
+        "idMovimentacao": "6926ff9a10bd7",
+        "codigoProduto": 102,
+        "descricaoMovimentacao": "Entrada de mercadoria",
+        "quantidade": 10,
+        "data": "2025-11-26 13:24:42"
+    },
+    {
+        "idMovimentacao": "6926ffc87a298",
+        "codigoProduto": 102,
+        "descricaoMovimentacao": "Saida de mercadoria",
+        "quantidade": -10,
+        "data": "2025-11-26 13:25:28"
+    }
+]
